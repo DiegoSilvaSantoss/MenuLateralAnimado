@@ -1,103 +1,149 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2980b9;
-    --text-color: #ecf0f1;
-    --text-secondary-color: #000f1f;
-    --background-color: #34495e;
+    --menu-lateral:#101010;
+    --texto: #fff;
+    --btn-link: #4B0082;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--text-color);
+    font-size: 17px;
     transition: background-color 0.5s ease;
 }
 
+
 .menu-lateral {
     position: fixed;
-    left: -300px;
     top: 0;
+    left: -300px;
     width: 300px;
     height: 100%;
-    background-color: var(--background-color);
+    background-color: var(--menu-lateral);
     z-index: 5;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 .menu-lateral.ativo {
     left: 0;
 }
-
 .menu-lateral ul {
     list-style-type: none;
+    margin-top: 90px;
     padding: 0;
-    margin-top: 60px;
 }
-
 .menu-lateral ul li {
-    padding: 15px 30px;
+    padding: 10px 15px;
+    position: relative;
 }
-
 .menu-lateral ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    text-decoration: none;
+    gap: 15px;
+    color: var(--texto);
 }
-
 .menu-lateral ul li a i {
-    font-size: 24px;
-    transition: 0.5s ease;
+    font-size: 19px;
+}
+.menu-lateral ul li a:hover i {
+    transform: translateX(5px) rotate(15deg);
+}
+.menu-lateral ul .li01::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 20%;
+    background-color: var(--btn-link);
+    z-index: -1;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu-lateral ul .li01:hover::after {
+    left: -10px;
+}
+.menu-lateral ul .li02::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 20%;
+    background-color: var(--btn-link);
+    z-index: -1;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu-lateral ul .li02:hover::after {
+    left: -10px;
+}
+.menu-lateral ul .li03::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 20%;
+    background-color: var(--btn-link);
+    z-index: -1;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu-lateral ul .li03:hover::after {
+    left: -10px;
+}
+.menu-lateral ul .li04::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100px;
+    height: 100%;
+    width: 20%;
+    background-color: var(--btn-link);
+    z-index: -1;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.menu-lateral ul .li04:hover::after {
+    left: -10px;
 }
 
-.menu-lateral ul li:hover {
-    background-color: var(--primary-color);
-}
 
-.menu-lateral ul li a i:hover {
-    transform: translateX(6px) rotate(5deg);
-}
 
 .botao-menu {
-    background-color: var(--primary-color);
-    position: fixed;
-    left: 20px;
-    top: 20px;
-    z-index: 6;
-    border-radius: 5px;
-    font-size: 24px;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 10px 15px;
     border: none;
-    padding: 5px 10px;
-    color: var(--text-color);
+    border-radius: 5px;
+    background-color: var(--btn-link);
     cursor: pointer;
     transition: all 0.5s ease;
+    z-index: 6;
 }
 .botao-menu:hover {
-    background-color: var(--secondary-color);
+    background-color: #6900b4;
+}
+.botao-menu.ativo {
+    margin-left: 320px;
+}
+.botao-menu i {
+    font-size: 24px;
+    color: var(--texto);
 }
 
-.botao-menu.ativo {
-    left: 320px;
-}
+
 
 .conteudo {
-    margin-left: 80px;
-    padding: 48px;
-    color: var(--text-secondary-color);
-    background-color: var(--text-color);
+    margin-left: 190px;
+    padding: 20px;
     transition: all 0.5s ease;
 }
-
 .conteudo.ativo {
-    margin-left: 380px;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    margin-left: 390px;
+    color: var(--texto);
 }
 
-.background {
+
+
+.fundo {
     position: fixed;
     top: 0;
     left: 0;
@@ -108,8 +154,7 @@ body {
     visibility: hidden;
     z-index: 4;
 }
-
-.background.ativo {
+.fundo.ativo {
     opacity: 1;
     visibility: visible;
 }
